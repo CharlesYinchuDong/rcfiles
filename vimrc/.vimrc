@@ -12,3 +12,7 @@ Plug 'junegunn/goyo.vim'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+
+:set filetype=json
+:syntax on
+:set foldmethod=syntax
