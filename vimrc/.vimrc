@@ -16,3 +16,8 @@ call plug#end()
 :set filetype=json
 :syntax on
 :set foldmethod=syntax
+
+"""
+""" Setup for Python
+"""
+autocmd FileType python nnoremap <buffer> <F5> :exec 'w' <cr> :exec '!clear; python' shellescape(@%, 1)<cr>
