@@ -39,7 +39,7 @@ highlight CursorLine cterm=NONE ctermbg=238 ctermfg=NONE
 " Change the cursor shape in different modes
 let &t_SI.="\e[5 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
-let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
+let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 
 " Reduce the timeout length to avoid the lag when using <esc> to switch mode
 " When using tmux, also need to:
@@ -56,7 +56,8 @@ set ttimeoutlen=0
 """
 """ Setup for Python
 """
-"autocmd FileType python nnoremap <buffer> <F5> :exec 'w' <cr> :exec '!clear; python' shellescape(@%, 1)<cr>
+autocmd FileType python nnoremap <buffer> <F5> :exec 'w' <cr> :exec '!clear; python' shellescape(@%, 1)<cr>
+autocmd BufEnter *.py colorscheme Tomorrow-Night-Eighties
 
 "------------------------------------------------------------------------------------
 " Plugins
