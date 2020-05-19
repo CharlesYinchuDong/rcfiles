@@ -19,6 +19,7 @@ set showcmd
 " Highlight searches (use <C-L> to temporarily turn off highlighting; see the
 " mapping of <C-L> below)
 set hlsearch
+nnoremap <C-L> :noh<CR>
 
 "-------------------------------------------------------------------------------------
 "Usability
