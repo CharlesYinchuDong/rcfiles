@@ -1,3 +1,13 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Metadata
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Basic vimrc.
+" Author: Charles Yinchu Dong
+" Github: https://github.com/CharlesYinchuDong/rcfiles/tree/master/vimrc
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" General
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set 'nocompatible' to ward off unexpected things that your distro might
 " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
@@ -16,17 +26,35 @@ set wildmenu
 " Show partial commands in the last line of the screen
 set showcmd
 
+" Minimal automatic indenting for any filetype.
+set autoindent
+
+" TODO: Figure out what's it about
+" Proper backspace behavior.
+" set backspace=indent,eol,start
+
+" Possibility to have more than one unsaved buffers.
+" set hidden
+
 " Highlight searches (use <C-L> to temporarily turn off highlighting; see the
 " mapping of <C-L> below)
 set hlsearch
 nnoremap <C-L> :noh<CR>
-
-"-------------------------------------------------------------------------------------
-"Usability
-"-------------------------------------------------------------------------------------
 " Use case insensitive search, except when using capital letters
 set ignorecase
 set smartcase
+" Search as characters are entered
+set incsearch
+
+" TODO: Pick a leader key and figure out its usage
+" let mapleader = ","
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Usability
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+"autocmd BufEnter *.py colorscheme Tomorrow-Night-Eighties
+
 
 " Display row number on the left side.
 set number
@@ -51,14 +79,14 @@ set timeoutlen=1000
 set ttimeout
 set ttimeoutlen=0
 
-"set cursorline
-"highlight CursorLine cterm=NONE ctermbg=238 ctermfg=NONE 
+" Leave minimum lines/columns around the cursor.
+set scrolloff=1
+set sidescrolloff=1
 
 """
 """ Setup for Python
 """
 autocmd FileType python nnoremap <buffer> <F5> :exec 'w' <cr> :exec '!clear; python' shellescape(@%, 1)<cr>
-autocmd BufEnter *.py colorscheme Tomorrow-Night-Eighties
 
 "------------------------------------------------------------------------------------
 " Plugins
