@@ -50,6 +50,9 @@ set incsearch
 " let mapleader = ","
 
 
+map <C-n> :NERDTreeToggle<CR>
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Usability
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -91,17 +94,26 @@ autocmd FileType python nnoremap <buffer> <F5> :exec 'w' <cr> :exec '!clear; pyt
 "------------------------------------------------------------------------------------
 " Plugins
 " -----------------------------------------------------------------------------------
-"" Plugins will be downloaded under the specified directory.
-"call plug#begin('~/.vim/plugged')
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
+
+" Declare the list of plugins.
 "
-"" Declare the list of plugins.
+" NerdTree
 "
-"""" 
-"""" Markdown file
-""""
+Plug 'preservim/nerdtree'
+
 "
+" CtrlSF
+"
+Plug 'dyng/ctrlsf.vim'
+
+""" 
+""" Markdown file
+"""
+
 """" Goyo write mode
 "Plug 'junegunn/goyo.vim'
 "
-"" List ends here. Plugins become visible to Vim after this call.
-"call plug#end()
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
