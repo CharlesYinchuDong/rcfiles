@@ -52,6 +52,9 @@ set incsearch
 
 map <C-n> :NERDTreeToggle<CR>
 
+" Fold method
+set foldmethod=syntax
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Usability
