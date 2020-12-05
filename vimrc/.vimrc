@@ -52,8 +52,9 @@ set incsearch
 
 map <C-n> :NERDTreeToggle<CR>
 
-" Fold method
+" Fold method (default to not fold anything)
 set foldmethod=syntax
+set foldlevel=99
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
