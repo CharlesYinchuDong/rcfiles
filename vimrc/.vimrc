@@ -112,6 +112,12 @@ Plug 'preservim/nerdtree'
 "
 Plug 'dyng/ctrlsf.vim'
 
+"
+" FZF: command-line fuzzy finder
+"
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 """ 
 """ Markdown file
 """
