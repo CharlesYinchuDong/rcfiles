@@ -95,9 +95,17 @@ set sidescrolloff=1
 """
 autocmd FileType python nnoremap <buffer> <F5> :exec 'w' <cr> :exec '!clear; python' shellescape(@%, 1)<cr>
 
-"------------------------------------------------------------------------------------
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Configure Plug-In
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NerdTree
+" Set the width based on number of columns
+:let g:NERDTreeWinSize=60
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
-" -----------------------------------------------------------------------------------
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
 
