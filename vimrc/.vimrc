@@ -47,7 +47,7 @@ set smartcase
 set incsearch
 
 " TODO: Pick a leader key and figure out its usage
-" let mapleader = ","
+let mapleader = ","
 
 
 map <C-n> :NERDTreeToggle<CR>
@@ -55,6 +55,8 @@ map <C-n> :NERDTreeToggle<CR>
 " Fold method (default to not fold anything)
 set foldmethod=syntax
 set foldlevel=99
+autocmd FileType python setlocal foldmethod=indent
+let javaScript_fold=1
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -95,13 +97,23 @@ set sidescrolloff=1
 """
 autocmd FileType python nnoremap <buffer> <F5> :exec 'w' <cr> :exec '!clear; python' shellescape(@%, 1)<cr>
 
+"autocmd BufEnter * silent! lcd %:p:h
+map <leader>n :NERDTreeFind<cr>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Key mapping
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+"nnoremap H gT " Switch to the previous tab
+"nnoremap L gt " Switch to the next tab
+
+map <leader>f :Files<cr>
+map <leader>s :Ag<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Configure Plug-In
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " NerdTree
 " Set the width based on number of columns
-:let g:NERDTreeWinSize=60
+let g:NERDTreeWinSize=60
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
