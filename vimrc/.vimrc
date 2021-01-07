@@ -6,7 +6,7 @@
 " Github: https://github.com/CharlesYinchuDong/rcfiles/tree/master/vimrc
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-""" General
+""" Usability
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Set 'nocompatible' to ward off unexpected things that your distro might
 " have made, as well as sanely reset options when re-sourcing .vimrc
@@ -36,48 +36,19 @@ set autoindent
 " Possibility to have more than one unsaved buffers.
 " set hidden
 
-" Highlight searches (use <C-L> to temporarily turn off highlighting; see the
-" mapping of <C-L> below)
+" Highlight searches 
 set hlsearch
-nnoremap <C-L> :noh<CR>
 " Use case insensitive search, except when using capital letters
 set ignorecase
 set smartcase
 " Search as characters are entered
 set incsearch
 
-" TODO: Pick a leader key and figure out its usage
-let mapleader = ","
-
-
-map <C-n> :NERDTreeToggle<CR>
-
 " Fold method (default to not fold anything)
 set foldmethod=syntax
 set foldlevel=99
 autocmd FileType python setlocal foldmethod=indent
 let javaScript_fold=1
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Usability
-""""""""""""""""""""""""""""""""""""""""""""""""""""
-"autocmd BufEnter *.py colorscheme Tomorrow-Night-Eighties
-
-
-" Display row number on the left side.
-set number
-highlight LineNr ctermfg=DarkGrey 
-" Highlight the current row
-set cursorline
-highlight CursorLine cterm=NONE ctermbg=238 ctermfg=NONE 
-" NOTE: Configure iTerm2 if you want to change the color of the cursor and
-" text under.
-
-" Change the cursor shape in different modes
-let &t_SI.="\e[5 q" "SI = INSERT mode
-let &t_SR.="\e[4 q" "SR = REPLACE mode
-let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 
 " Reduce the timeout length to avoid the lag when using <esc> to switch mode
 " When using tmux, also need to:
@@ -98,21 +69,51 @@ set sidescrolloff=1
 autocmd FileType python nnoremap <buffer> <F5> :exec 'w' <cr> :exec '!clear; python' shellescape(@%, 1)<cr>
 
 "autocmd BufEnter * silent! lcd %:p:h
-map <leader>n :NERDTreeFind<cr>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-" Key mapping
+" Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-"nnoremap H gT " Switch to the previous tab
-"nnoremap L gt " Switch to the next tab
+"autocmd BufEnter *.py colorscheme Tomorrow-Night-Eighties
 
+" Display row number on the left side.
+set number
+highlight LineNr ctermfg=DarkGrey 
+" Highlight the current row.
+set cursorline
+highlight CursorLine cterm=NONE ctermbg=238 ctermfg=NONE 
+" NOTE: Configure iTerm2 if you want to change the color of the cursor and
+" text under.
+
+" Change the cursor shape in different modes.
+let &t_SI.="\e[5 q" "SI = INSERT mode
+let &t_SR.="\e[4 q" "SR = REPLACE mode
+let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Key Mapping / Shortcuts
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set the leader key
+let mapleader = ","
+
+" Fzf file search and 's' for content search.
 map <leader>f :Files<cr>
 map <leader>s :Ag<cr>
+
+" Use <C-L> to temporarily turn off highlighting search result.
+nnoremap <C-L> :noh<CR>
+
+" Open the NerdTree
+map <C-n> :NERDTreeToggle<CR>
+" Find the current file in the NerdTree.
+map <leader>n :NERDTreeFind<cr>
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Configure Plug-In
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-" NerdTree
-" Set the width based on number of columns
+" NerdTree - Set the width based on number of columns.
 let g:NERDTreeWinSize=60
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -122,28 +123,18 @@ let g:NERDTreeWinSize=60
 call plug#begin('~/.vim/plugged')
 
 " Declare the list of plugins.
-"
 " NerdTree
-"
 Plug 'preservim/nerdtree'
 
-"
 " CtrlSF
-"
 Plug 'dyng/ctrlsf.vim'
 
-"
 " FZF: command-line fuzzy finder
-"
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-""" 
-""" Markdown file
-"""
-
-"""" Goyo write mode
+" Goyo write mode
 "Plug 'junegunn/goyo.vim'
-"
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
