@@ -24,7 +24,7 @@ Plug 'junegunn/fzf.vim'
 
 " OneDark color theme (like Atom)
 Plug 'joshdick/onedark.vim'
-" Improve OneDark theme for multiple languages (optional but recommended)
+" Language pack that improves OneDark theme (optional but recommended)
 Plug 'sheerun/vim-polyglot'
 
 " Goyo write mode
