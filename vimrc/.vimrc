@@ -6,12 +6,12 @@
 " Github: https://github.com/CharlesYinchuDong/rcfiles/tree/master/vimrc
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins
+" Plugins (need to be the first section as it is required downstream)
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
 
-" Declare the list of plugins.
+" Declare a list of plugins.
 " NerdTree
 Plug 'preservim/nerdtree'
 
@@ -24,7 +24,7 @@ Plug 'junegunn/fzf.vim'
 
 " OneDark color theme (like Atom)
 Plug 'joshdick/onedark.vim'
-" Improve OneDark theme for multiple languages (optional)
+" Improve OneDark theme for multiple languages (optional but recommended)
 Plug 'sheerun/vim-polyglot'
 
 " Goyo write mode
@@ -32,6 +32,9 @@ Plug 'sheerun/vim-polyglot'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+
+" NerdTree - Set the width based on number of columns.
+let g:NERDTreeWinSize=60
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -97,6 +100,7 @@ set sidescrolloff=1
 """
 autocmd FileType python nnoremap <buffer> <F5> :exec 'w' <cr> :exec '!clear; python' shellescape(@%, 1)<cr>
 
+" Automatically set the current file to be the current directory.
 "autocmd BufEnter * silent! lcd %:p:h
 
 
@@ -117,6 +121,7 @@ let &t_SI.="\e[5 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 
+" Set color theme to OneDark
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
 "(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
@@ -138,10 +143,10 @@ colorscheme onedark
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Key Mapping / Shortcuts
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-" Set the leader key
+" Set the leader key.
 let mapleader = ","
 
-" Fzf file search and 's' for content search.
+" Fzf file search and content search.
 map <leader>f :Files<cr>
 map <leader>s :Ag<cr>
 
@@ -152,11 +157,3 @@ nnoremap <C-L> :noh<CR>
 map <C-n> :NERDTreeToggle<CR>
 " Find the current file in the NerdTree.
 map <leader>n :NERDTreeFind<cr>
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Configure Plug-In
-""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NerdTree - Set the width based on number of columns.
-let g:NERDTreeWinSize=60
-
