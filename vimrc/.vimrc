@@ -114,7 +114,7 @@ set number relativenumber
 highlight LineNr ctermfg=DarkGrey 
 " Highlight the current row.
 set cursorline
-highlight CursorLine cterm=NONE ctermbg=238 ctermfg=NONE 
+"highlight CursorLine cterm=NONE ctermbg=238 ctermfg=NONE 
 " NOTE: Configure iTerm2 if you want to change the color of the cursor and
 " text under.
 
