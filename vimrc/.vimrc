@@ -107,8 +107,10 @@ autocmd FileType python nnoremap <buffer> <F5> :exec 'w' <cr> :exec '!clear; pyt
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+colorscheme onedark
+
 " Display row number on the left side.
-set number
+set number relativenumber
 highlight LineNr ctermfg=DarkGrey 
 " Highlight the current row.
 set cursorline
@@ -138,7 +140,7 @@ if (empty($TMUX))
   endif
 endif
 
-colorscheme onedark
+"colorscheme onedark
 
 set colorcolumn=80
 
