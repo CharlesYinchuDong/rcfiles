@@ -140,6 +140,8 @@ endif
 
 colorscheme onedark
 
+set colorcolumn=80
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Key Mapping / Shortcuts
 """"""""""""""""""""""""""""""""""""""""""""""""""""
