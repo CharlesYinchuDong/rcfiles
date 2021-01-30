@@ -62,10 +62,14 @@ set wildmenu
 set showcmd
 
 " Minimal automatic indenting for any filetype.
-set autoindent
+"set autoindent
 " Indent for JS
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-autocmd FileType c3 setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+set tabstop=2
+set shiftwidth=2
+set autoindent
+set expandtab
+"autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+"autocmd FileType c3 setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
 " TODO: Figure out what's it about
 " Proper backspace behavior.
