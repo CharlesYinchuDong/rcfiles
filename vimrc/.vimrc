@@ -105,6 +105,10 @@ set ttimeoutlen=0
 set scrolloff=1
 set sidescrolloff=1
 
+" Open up new split window to RIGHT or BELOW
+set splitbelow
+set splitright
+
 """
 """ Setup for Python
 """
