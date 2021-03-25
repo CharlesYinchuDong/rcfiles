@@ -31,7 +31,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'JamshedVesuna/vim-markdown-preview'
 
 " Auto-close parentheses and quotes
-Plug 'Raimondi/delimitMate'
+" Plug 'Raimondi/delimitMate'
+Plug 'tmsvg/pear-tree'
 
 " Goyo write mode
 "Plug 'junegunn/goyo.vim'
