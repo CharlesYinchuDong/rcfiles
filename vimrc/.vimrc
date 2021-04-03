@@ -6,43 +6,29 @@
 " Github: https://github.com/CharlesYinchuDong/rcfiles/tree/master/vimrc
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins (need to be the first section as it is required downstream)
+" Plugins (need to be the first section as some of them are required downstream)
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
-
-" Declare a list of plugins.
 " NerdTree
 Plug 'preservim/nerdtree'
-
 " CtrlSF
 Plug 'dyng/ctrlsf.vim'
-
 " FZF: command-line fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-
 " OneDark color theme (like Atom)
 Plug 'joshdick/onedark.vim'
 " Language pack that improves OneDark theme (optional but recommended)
 Plug 'sheerun/vim-polyglot'
-
 " Render Markdown file.
 Plug 'JamshedVesuna/vim-markdown-preview'
-
 " Auto-close parentheses and quotes
-" Plug 'Raimondi/delimitMate'
 Plug 'tmsvg/pear-tree'
-
-" Goyo write mode
-"Plug 'junegunn/goyo.vim'
-
-" List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
 " NerdTree - Set the width based on number of columns.
 let g:NERDTreeWinSize=60
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """ Usability
@@ -50,6 +36,9 @@ let g:NERDTreeWinSize=60
 " Set 'nocompatible' to ward off unexpected things that your distro might
 " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
+
+" Turn off beeping bell sounds for all events.
+set belloff=all
 
 " Attempt to determine the type of a file based on its name and possibly its
 " contents. Use this to allow intelligent auto-indenting for each filetype,
@@ -65,8 +54,8 @@ set wildmenu
 " Show partial commands in the last line of the screen
 set showcmd
 
+" TODO: Set up shifts for all file types.
 " Minimal automatic indenting for any filetype.
-"set autoindent
 " Indent for JS
 set tabstop=2
 set shiftwidth=2
@@ -166,7 +155,7 @@ set colorcolumn=80
 " Key Mapping / Shortcuts
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Set the leader key.
-let mapleader = ","
+let mapleader = " "
 
 " Fzf file search and content search.
 map <leader>f :Files<cr>
@@ -179,3 +168,9 @@ nnoremap <C-L> :noh<CR>
 map <C-n> :NERDTreeToggle<CR>
 " Find the current file in the NerdTree.
 map <leader>n :NERDTreeFind<cr>
+
+" Navigate window easier
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
