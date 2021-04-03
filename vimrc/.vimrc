@@ -37,7 +37,7 @@ let g:NERDTreeWinSize=60
 " have made, as well as sanely reset options when re-sourcing .vimrc
 set nocompatible
 
-" Turn off beeping bell sounds for all events.
+" Turn off beeping bell sound for all events.
 set belloff=all
 
 " Attempt to determine the type of a file based on its name and possibly its
@@ -107,10 +107,6 @@ set splitright
 """
 autocmd FileType python nnoremap <buffer> <F5> :exec 'w' <cr> :exec '!clear; python' shellescape(@%, 1)<cr>
 
-" Automatically set the current file to be the current directory.
-"autocmd BufEnter * silent! lcd %:p:h
-
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -147,8 +143,6 @@ if (empty($TMUX))
   endif
 endif
 
-"colorscheme onedark
-
 set colorcolumn=80
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -158,8 +152,8 @@ set colorcolumn=80
 let mapleader = " "
 
 " Fzf file search and content search.
-map <leader>f :Files<cr>
-map <leader>s :Ag<cr>
+map <leader>f :Files<CR>
+map <leader>s :Ag<CR>
 
 " Use <C-L> to temporarily turn off highlighting search result.
 nnoremap <C-L> :noh<CR>
@@ -167,21 +161,21 @@ nnoremap <C-L> :noh<CR>
 " Open the NerdTree
 map <C-n> :NERDTreeToggle<CR>
 " Find the current file in the NerdTree.
-map <leader>n :NERDTreeFind<cr>
+map <leader>n :NERDTreeFind<CR>
 
-" Navigate split window with hjkl
+" Navigate split window with hjkl.
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 
-" Navigate tabs by number
+" Navigate tabs by number.
 nnoremap <leader>1 1gt
 nnoremap <leader>2 2gt
 nnoremap <leader>3 3gt
 nnoremap <leader>4 4gt
 nnoremap <leader>5 5gt
 nnoremap <leader>0 :tablast<CR>
-" Toggle between the current and last active tab
+" Toggle between the current and last active tab.
 au TabLeave * let g:lasttab = tabpagenr()
 nnoremap <silent> <leader>l :exe "tabn ".g:lasttab<CR>
