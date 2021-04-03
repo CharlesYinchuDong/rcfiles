@@ -178,4 +178,4 @@ nnoremap <leader>5 5gt
 nnoremap <leader>0 :tablast<CR>
 " Toggle between the current and last active tab.
 au TabLeave * let g:lasttab = tabpagenr()
-nnoremap <silent> <leader>l :exe "tabn ".g:lasttab<CR>
+nnoremap <silent> <leader>o :exe "tabn ".g:lasttab<CR>
