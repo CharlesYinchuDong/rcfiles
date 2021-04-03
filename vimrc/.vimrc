@@ -169,8 +169,19 @@ map <C-n> :NERDTreeToggle<CR>
 " Find the current file in the NerdTree.
 map <leader>n :NERDTreeFind<cr>
 
-" Navigate window easier
+" Navigate split window with hjkl
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
+
+" Navigate tabs by number
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+nnoremap <leader>0 :tablast<CR>
+" Toggle between the current and last active tab
+au TabLeave * let g:lasttab = tabpagenr()
+nnoremap <silent> <leader>l :exe "tabn ".g:lasttab<CR>
