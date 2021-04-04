@@ -159,9 +159,9 @@ map <leader>s :Ag<CR>
 nnoremap <C-L> :noh<CR>
 
 " Open the NerdTree
-map <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
 " Find the current file in the NerdTree.
-map <leader>n :NERDTreeFind<CR>
+nnoremap <leader>n :NERDTreeFind<CR>
 
 " Navigate split window with hjkl.
 nnoremap <leader>h :wincmd h<CR>
