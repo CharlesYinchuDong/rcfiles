@@ -19,12 +19,16 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " OneDark color theme (like Atom)
 Plug 'joshdick/onedark.vim'
+" Gruvbox color theme
+Plug 'morhetz/gruvbox'
 " Language pack that improves OneDark theme (optional but recommended)
 Plug 'sheerun/vim-polyglot'
 " Render Markdown file.
 Plug 'JamshedVesuna/vim-markdown-preview'
 " Auto-close parentheses and quotes
 Plug 'tmsvg/pear-tree'
+" Git wrapper
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " NerdTree - Set the width based on number of columns.
@@ -111,6 +115,8 @@ autocmd FileType python nnoremap <buffer> <F5> :exec 'w' <cr> :exec '!clear; pyt
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme onedark
+"colorscheme gruvbox
+"set background=dark
 
 " Display row number on the left side.
 set number relativenumber
@@ -179,3 +185,8 @@ nnoremap <leader>0 :tablast<CR>
 " Toggle between the current and last active tab.
 au TabLeave * let g:lasttab = tabpagenr()
 nnoremap <silent> <leader>o :exe "tabn ".g:lasttab<CR>
+
+" Git wrapper
+nmap <leader>gf :diffget //3<CR>
+nmap <leader>gj :diffget //2<CR>
+nmap <leader>gs :G<CR>
