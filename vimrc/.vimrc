@@ -159,7 +159,7 @@ let mapleader = " "
 
 " Fzf file search and content search.
 map <leader>f :Files<CR>
-map <leader>s :Ag<CR>
+map <leader>s :Rg<CR>
 
 " Use <C-L> to temporarily turn off highlighting search result.
 nnoremap <C-L> :noh<CR>
