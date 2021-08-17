@@ -2,4 +2,6 @@
 
 path=$(pwd)
 file="my-setup.json"
-ln -s ${path}/${file} ~/.config/karabiner/assets/complex_modifications
+destination=".config/karabiner/assets/complex_modifications"
+rm -f $HOME/${destination}/${file}
+ln -s ${path}/${file} $HOME/${destination}
