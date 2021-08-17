@@ -132,12 +132,7 @@
             "manipulators": [
                 {
                     "from": {
-                        "key_code": "left_option",
-                        "modifiers": {
-                            "optional": [
-                                "any"
-                            ]
-                        }
+                        "key_code": "left_option"
                     },
                     "to": [
                         {
@@ -148,12 +143,7 @@
                 },
                 {
                     "from": {
-                        "key_code": "left_command",
-                        "modifiers": {
-                            "optional": [
-                                "any"
-                            ]
-                        }
+                        "key_code": "left_command"
                     },
                     "to": [
                         {
@@ -164,12 +154,7 @@
                 },
                 {
                     "from": {
-                        "key_code": "right_command",
-                        "modifiers": {
-                            "optional": [
-                                "any"
-                            ]
-                        }
+                        "key_code": "right_command"
                     },
                     "to": [
                         {
@@ -180,12 +165,7 @@
                 },
                 {
                     "from": {
-                        "key_code": "right_option",
-                        "modifiers": {
-                            "optional": [
-                                "any"
-                            ]
-                        }
+                        "key_code": "right_option"
                     },
                     "to": [
                         {
