@@ -49,9 +49,6 @@ set belloff=all
 " and for plugins that are filetype specific.
 filetype indent plugin on
 
-" Syntax highlighting.
-syntax on
-
 " Better command-line completion
 set wildmenu
 
@@ -114,9 +111,12 @@ autocmd FileType python nnoremap <buffer> <F5> :exec 'w' <cr> :exec '!clear; pyt
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+" Turn on syntax highlighting.
+syntax on
+
+" Choose a color theme.
 colorscheme onedark
 "colorscheme gruvbox
-"set background=dark
 
 " Display row number on the left side.
 set number relativenumber
@@ -149,6 +149,7 @@ if (empty($TMUX))
   endif
 endif
 
+" Have a vertical line to hightlight width 80.
 set colorcolumn=80
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
