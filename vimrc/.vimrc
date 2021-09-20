@@ -96,12 +96,15 @@ set ttimeout
 set ttimeoutlen=0
 
 " Leave minimum lines/columns around the cursor.
-set scrolloff=1
-set sidescrolloff=1
+set scrolloff=5
+set sidescrolloff=5
 
 " Open up new split window to RIGHT or BELOW
 set splitbelow
 set splitright
+
+" Do not wrap lines.
+set nowrap
 
 """
 """ Setup for Python
