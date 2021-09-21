@@ -108,15 +108,15 @@ set splitright
 " Do not wrap lines.
 set nowrap
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" File-specific 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 """
 """ Setup for Python
 """
 autocmd FileType python nnoremap <buffer> <F5> :exec 'w' <cr> :exec '!clear; python' shellescape(@%, 1)<cr>
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" File-specific 
-""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Appearance
@@ -161,6 +161,17 @@ endif
 
 " Have a vertical line to hightlight width 80.
 set colorcolumn=80
+
+" Clear status line when vimrc is reloaded.
+set statusline=
+" Status line left side.
+set statusline+=\ %F\ %M\ %Y\ %R
+" Use a divider to separate the left side from the right side.
+set statusline+=%=
+" Status line right side.
+set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
+" Always display status line.
+set laststatus=2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Key Mapping / Shortcuts
