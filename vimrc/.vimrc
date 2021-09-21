@@ -37,8 +37,7 @@ let g:NERDTreeWinSize=60
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """ Usability
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-" Set 'nocompatible' to ward off unexpected things that your distro might
-" have made, as well as sanely reset options when re-sourcing .vimrc
+" Disable compatibility with vi to prevent unexpected behaviors.
 set nocompatible
 
 " Turn off beeping bell sound for all events.
@@ -72,12 +71,12 @@ set expandtab
 " Possibility to have more than one unsaved buffers.
 " set hidden
 
-" Highlight searches 
+" Highlight searches.
 set hlsearch
-" Use case insensitive search, except when using capital letters
+" Use case insensitive search, except when using capital letters.
 set ignorecase
 set smartcase
-" Search as characters are entered
+" Search as characters are entered.
 set incsearch
 
 " Fold method (default to not fold anything)
@@ -99,7 +98,7 @@ set ttimeoutlen=0
 set scrolloff=5
 set sidescrolloff=5
 
-" Open up new split window to RIGHT or BELOW
+" Open up new split window to RIGHT or BELOW.
 set splitbelow
 set splitright
 
