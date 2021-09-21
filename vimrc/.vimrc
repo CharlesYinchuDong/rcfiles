@@ -191,6 +191,7 @@ map <leader>f :Files<CR>
 map <leader>s :Rg<CR>
 
 " Use <C-L> to temporarily turn off highlighting search result.
+" Also to turn off spell checking.
 nnoremap <C-L> :noh<CR>:setlocal nospell<CR>
 
 " Open the NerdTree
