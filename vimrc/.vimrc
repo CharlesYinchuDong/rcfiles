@@ -50,6 +50,9 @@ filetype indent plugin on
 
 " Better command-line completion
 set wildmenu
+" There are certain files that we would never want to edit with Vim.
+" Wildmenu will ignore files with these extensions.
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
 " Show partial commands in the last line of the screen
 set showcmd
@@ -162,7 +165,7 @@ set colorcolumn=80
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Key Mapping / Shortcuts
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-" Set the leader key.
+" Set space as the leader key.
 let mapleader = " "
 
 " Fzf file search and content search.
