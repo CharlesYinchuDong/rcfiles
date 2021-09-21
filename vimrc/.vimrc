@@ -1,7 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " =>  Metadata
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-" Basic vimrc.
+" Personal vimrc.
 " Author: Charles Yinchu Dong
 " Github: https://github.com/CharlesYinchuDong/rcfiles/tree/master/vimrc
 
@@ -10,24 +10,24 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins will be downloaded under the specified directory.
 call plug#begin('~/.vim/plugged')
-" NerdTree
+" NerdTree.
 Plug 'preservim/nerdtree'
-" CtrlSF
+" CtrlSF.
 Plug 'dyng/ctrlsf.vim'
-" FZF: command-line fuzzy finder
+" FZF: command-line fuzzy finder.
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-" OneDark color theme (like Atom)
+" OneDark color theme (like Atom).
 Plug 'joshdick/onedark.vim'
-" Gruvbox color theme
+" Gruvbox color theme.
 Plug 'morhetz/gruvbox'
-" Language pack that improves OneDark theme (optional but recommended)
+" Language pack that improves OneDark theme (optional but recommended).
 Plug 'sheerun/vim-polyglot'
 " Render Markdown file.
 Plug 'JamshedVesuna/vim-markdown-preview'
-" Auto-close parentheses and quotes
+" Auto-close parentheses and quotes.
 Plug 'tmsvg/pear-tree'
-" Git wrapper
+" Git wrapper.
 Plug 'tpope/vim-fugitive'
 call plug#end()
 
@@ -48,13 +48,13 @@ set belloff=all
 " and for plugins that are filetype specific.
 filetype indent plugin on
 
-" Better command-line completion
+" Better command-line completion.
 set wildmenu
 " There are certain files that we would never want to edit with Vim.
 " Wildmenu will ignore files with these extensions.
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
-" Show partial commands in the last line of the screen
+" Show partial commands in the last line of the screen.
 set showcmd
 
 " TODO: Set up shifts for all file types.
