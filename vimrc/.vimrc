@@ -1,5 +1,5 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-""" Metadata
+" =>  Metadata
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Basic vimrc.
 " Author: Charles Yinchu Dong
@@ -35,7 +35,7 @@ call plug#end()
 let g:NERDTreeWinSize=60
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-""" Usability
+" => Usability
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Disable compatibility with vi to prevent unexpected behaviors.
 set nocompatible
@@ -110,7 +110,7 @@ set nowrap
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-""" File-specific 
+" => File-specific 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """
 """ Setup for Python
@@ -119,7 +119,7 @@ autocmd FileType python nnoremap <buffer> <F5> :exec 'w' <cr> :exec '!clear; pyt
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-" Appearance
+" => Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn on syntax highlighting.
 syntax on
@@ -173,8 +173,15 @@ set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
 " Always display status line.
 set laststatus=2
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-" Key Mapping / Shortcuts
+" => Spell & Syntax Checking
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set language to English, and not do spell check on east Asian words.
+set spelllang=en,cjk
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Key Mapping / Shortcuts
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Set space as the leader key.
 let mapleader = " "
@@ -184,7 +191,7 @@ map <leader>f :Files<CR>
 map <leader>s :Rg<CR>
 
 " Use <C-L> to temporarily turn off highlighting search result.
-nnoremap <C-L> :noh<CR>
+nnoremap <C-L> :noh<CR>:setlocal nospell<CR>
 
 " Open the NerdTree
 nnoremap <C-n> :NERDTreeToggle<CR>
@@ -208,7 +215,10 @@ nnoremap <leader>0 :tablast<CR>
 au TabLeave * let g:lasttab = tabpagenr()
 nnoremap <silent> <leader>o :exe "tabn ".g:lasttab<CR>
 
-" Git wrapper
+" Git wrapper.
 nmap <leader>gf :diffget //3<CR>
 nmap <leader>gj :diffget //2<CR>
 nmap <leader>gs :G<CR>
+
+" Spell checking.
+nnoremap <leader>c :setlocal spell<CR>
