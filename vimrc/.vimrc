@@ -56,23 +56,14 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
 " Show partial commands in the last line of the screen.
 set showcmd
+" Show which mode we are in.
+set showmode
 
-" TODO: Set up shifts for all file types.
-" Minimal automatic indenting for any filetype.
-" Indent for JS
-set tabstop=2
-set shiftwidth=2
-set autoindent
-set expandtab
-"autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-"autocmd FileType c3 setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-
-" TODO: Figure out what's it about
 " Proper backspace behavior.
-" set backspace=indent,eol,start
+set backspace=indent,eol,start
 
-" Possibility to have more than one unsaved buffers.
-" set hidden
+" Allow unwritten buffers to be not visible.
+set hidden
 
 " Highlight searches.
 set hlsearch
@@ -82,16 +73,10 @@ set smartcase
 " Search as characters are entered.
 set incsearch
 
-" Fold method (default to not fold anything)
-set foldmethod=syntax
-set foldlevel=99
-autocmd FileType python setlocal foldmethod=indent
-let javaScript_fold=1
-
 " Reduce the timeout length to avoid the lag when using <esc> to switch mode
 " When using tmux, also need to:
-" (1) Put "set -sg escape-time 10" in ".tmux.conf"
-" (2) Put "maptimeout 10" in ".screenrc"
+" (1) Put "set -sg escape-time 10" in ".tmux.conf".
+" (2) Put "maptimeout 10" in ".screenrc".
 set timeout
 set timeoutlen=1000
 set ttimeout
@@ -108,6 +93,9 @@ set splitright
 " Do not wrap lines.
 set nowrap
 
+" Don't update the display while executing macros
+set lazyredraw
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " => File-specific 
@@ -116,6 +104,23 @@ set nowrap
 """ Setup for Python
 """
 autocmd FileType python nnoremap <buffer> <F5> :exec 'w' <cr> :exec '!clear; python' shellescape(@%, 1)<cr>
+
+" TODO: Set up shifts for all file types.
+" Minimal automatic indenting for any filetype.
+" Indent for JS
+set tabstop=2
+set shiftwidth=2
+set autoindent
+set expandtab
+"autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+"autocmd FileType c3 setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+
+
+" Fold method (default to not fold anything)
+set foldmethod=syntax
+set foldlevel=99
+autocmd FileType python setlocal foldmethod=indent
+let javaScript_fold=1
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -223,3 +228,11 @@ nmap <leader>gs :G<CR>
 
 " Spell checking.
 nnoremap <leader>c :setlocal spell<CR>
+
+" Let's make it easy to edit this file (mnemonic for the key sequence is
+" 'e'dit 'v'imrc)
+nmap <silent> ,ev :e $MYVIMRC<CR>
+
+" And to source this file as well (mnemonic for the key sequence is
+" 's'ource 'v'imrc)
+nmap <silent> ,sv :so $MYVIMRC<CR>
