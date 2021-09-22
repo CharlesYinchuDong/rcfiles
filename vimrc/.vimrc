@@ -96,15 +96,10 @@ set nowrap
 " Don't update the display while executing macros
 set lazyredraw
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " => File-specific 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-"""
-""" Setup for Python
-"""
-autocmd FileType python nnoremap <buffer> <F5> :exec 'w' <cr> :exec '!clear; python' shellescape(@%, 1)<cr>
-
+" Tab.
 " TODO: Set up shifts for all file types.
 " Minimal automatic indenting for any filetype.
 " Indent for JS
@@ -115,13 +110,21 @@ set expandtab
 "autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 "autocmd FileType c3 setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
-
+" Fold
 " Fold method (default to not fold anything)
 set foldmethod=syntax
 set foldlevel=99
 autocmd FileType python setlocal foldmethod=indent
 let javaScript_fold=1
 
+"""
+""" Python
+"""
+autocmd FileType python nnoremap <buffer> <F5> :exec 'w' <cr> :exec '!clear; python' shellescape(@%, 1)<cr>
+
+"""
+""" Javascript
+"""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " => Appearance
@@ -139,13 +142,13 @@ highlight LineNr ctermfg=DarkGrey
 " Highlight the current row.
 set cursorline
 "highlight CursorLine cterm=NONE ctermbg=238 ctermfg=NONE 
-" NOTE: Configure iTerm2 if you want to change the color of the cursor and
-" text under.
 
 " Change the cursor shape in different modes.
 let &t_SI.="\e[5 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
+" NOTE: Configure iTerm2 if you want to change the color of the cursor and
+" text under.
 
 " Set color theme to OneDark
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
