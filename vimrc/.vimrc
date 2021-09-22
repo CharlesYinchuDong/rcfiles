@@ -231,8 +231,7 @@ nnoremap <leader>c :setlocal spell<CR>
 
 " Let's make it easy to edit this file (mnemonic for the key sequence is
 " 'e'dit 'v'imrc)
-nmap <silent> ,ev :e $MYVIMRC<CR>
-
+nmap <silent> ,ev :tabnew $MYVIMRC<CR>
 " And to source this file as well (mnemonic for the key sequence is
 " 's'ource 'v'imrc)
 nmap <silent> ,sv :so $MYVIMRC<CR>
