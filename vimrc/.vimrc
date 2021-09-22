@@ -136,20 +136,6 @@ syntax on
 colorscheme onedark
 "colorscheme gruvbox
 
-" Display row number on the left side.
-set number relativenumber
-highlight LineNr ctermfg=DarkGrey 
-" Highlight the current row.
-set cursorline
-"highlight CursorLine cterm=NONE ctermbg=238 ctermfg=NONE 
-
-" Change the cursor shape in different modes.
-let &t_SI.="\e[5 q" "SI = INSERT mode
-let &t_SR.="\e[4 q" "SR = REPLACE mode
-let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
-" NOTE: Configure iTerm2 if you want to change the color of the cursor and
-" text under.
-
 " Set color theme to OneDark
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
@@ -167,6 +153,20 @@ if (empty($TMUX))
   endif
 endif
 
+" Display row number on the left side.
+set number relativenumber
+highlight LineNr ctermfg=DarkGrey 
+" Highlight the current row.
+set cursorline
+"highlight CursorLine cterm=NONE ctermbg=238 ctermfg=NONE 
+
+" Change the cursor shape in different modes.
+let &t_SI.="\e[5 q" "SI = INSERT mode
+let &t_SR.="\e[4 q" "SR = REPLACE mode
+let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
+" NOTE: Configure iTerm2 if you want to change the color of the cursor and
+" text under.
+
 " Have a vertical line to hightlight width 80.
 set colorcolumn=80
 
@@ -180,7 +180,6 @@ set statusline+=%=
 set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
 " Always display status line.
 set laststatus=2
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " => Spell & Syntax Checking
@@ -202,7 +201,7 @@ map <leader>s :Rg<CR>
 " Also to turn off spell checking.
 nnoremap <C-L> :noh<CR>:setlocal nospell<CR>
 
-" Open the NerdTree
+" Open the NerdTree.
 nnoremap <C-n> :NERDTreeToggle<CR>
 " Find the current file in the NerdTree.
 nnoremap <leader>n :NERDTreeFind<CR>
