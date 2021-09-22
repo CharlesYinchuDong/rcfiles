@@ -93,7 +93,7 @@ set splitright
 " Do not wrap lines.
 set nowrap
 
-" Don't update the display while executing macros
+" Don't update the display while executing macros.
 set lazyredraw
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -103,10 +103,10 @@ set lazyredraw
 " TODO: Set up shifts for all file types.
 " Minimal automatic indenting for any filetype.
 " Indent for JS
-set tabstop=2
+" set tabstop=2
 set shiftwidth=2
-set autoindent
-set expandtab
+" set autoindent
+" set expandtab
 "autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 "autocmd FileType c3 setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
