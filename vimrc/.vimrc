@@ -132,7 +132,7 @@ syntax on
 
 " Choose a color theme.
 colorscheme onedark
-"colorscheme gruvbox
+" colorscheme gruvbox
 
 " Set color theme to OneDark
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
@@ -229,12 +229,9 @@ nmap <leader>gs :G<CR>
 " Spell checking.
 nnoremap <leader>c :setlocal spell<CR>
 
-" Let's make it easy to edit this file (mnemonic for the key sequence is
-" 'e'dit 'v'imrc)
-nmap <silent> ,ev :tabnew $MYVIMRC<CR>
-" And to source this file as well (mnemonic for the key sequence is
-" 's'ource 'v'imrc)
-nmap <silent> ,sv :so $MYVIMRC<CR>
+" Buffer navigation.
+nnoremap <leader>b :ls<CR>:b<space>
+nnoremap <leader><tab> :b#<CR>
 
 " Comment and uncomment a line/block of code.
 let s:comment_map = { 
@@ -285,3 +282,10 @@ endfunction
 " Use Control + forward slash(/) to toggle comment.
 nnoremap <C-_> :call ToggleComment()<CR>
 vnoremap <C-_> :call ToggleComment()<CR>
+
+" Let's make it easy to edit this file (mnemonic for the key sequence is
+" 'e'dit 'v'imrc)
+nmap <silent> ,ev :tabnew $MYVIMRC<CR>
+" And to source this file as well (mnemonic for the key sequence is
+" 's'ource 'v'imrc)
+nmap <silent> ,sv :so $MYVIMRC<CR>
